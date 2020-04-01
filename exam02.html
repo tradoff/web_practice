@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam 02</title>
+    <style>
+        .container {
+            margin-top: 27px;
+            margin-left: 18px;
+            display: flex;
+        }
+        .square {
+            position: relative;
+            width: 56px;
+            height: 64px;
+            margin: 0;
+            margin-right: 25px;
+            text-align: center;
+            line-height: 64px;
+            border: 2px solid rgb(235, 235, 235);
+            background-color: rgb(247, 246, 246);
+        }
+        .box1{
+            transform: skewX(30deg);
+            -webkit-transform: skewX(30deg);
+            -o-transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+        }
+        .box2{
+            transform: scaleX(0.5);
+            -webkit-transform: scaleX(0.5);
+            -o-transform: scaleX(0.5);
+            -moz-transform: scaleX(0.5);
+        }
+        .box3{
+            transform: rotateX(45deg);
+            -webkit-transform: rotateX(45deg);
+            -o-transform: rotateX(45deg);
+            -moz-transform: rotateX(45deg);
+        }
+        .box4{
+            transform: translate(10px, 20px);
+            -webkit-transform: translate(10px, 20px);
+            -o-transform: translate(10px, 20px);
+            -moz-transform: translate(10px, 20px);
+        }
+        .box5{
+            transform: skewX(30deg) scaleX(0.5) 
+                rotateX(45deg) translate(10px, 20px);
+            -webkit-transform: skewX(30deg) scaleX(0.5) 
+                rotateX(45deg) translate(10px, 20px);
+            -o-transform: skewX(30deg) scaleX(0.5) 
+                rotateX(45deg) translate(10px, 20px);
+            -moz-transform: skewX(30deg) scaleX(0.5) 
+                rotateX(45deg) translate(10px, 20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square">box0</div>
+        <div class="square box1">box1</div>
+        <div class="square box2">box2</div>
+        <div class="square box3">box3</div>
+        <div class="square box4">box4</div>
+        <div class="square box5">box5</div>
+    </div>
+</body>
+</html>
