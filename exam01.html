@@ -54,9 +54,9 @@
     <div id="container" class="container">
         <h1 id="tab" class="tab">前端学院</h1>
         <h1 id="underline" class="underline"></h1 >
-        <button onclick="changeStyle()" >
+        <button id="btn">
             切换样式
-        </button>
+        </button >
     </div >
     <script>
         function change() {
@@ -70,7 +70,7 @@
             }
             return f
         }
-        var changeStyle = change();
+        document.getElementById("btn").onclick = change();
 
     </script>
 </body>
