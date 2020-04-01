@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 80px;
+        }
+        .tab {
+            margin: 0;
+            text-align: center;
+            font-size: large;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            -moz-transition: all 1s;
+        }
+        .tab-change {
+            color: blue;
+        }
+        .underline {
+            width: 0;
+            position: relative;
+            left: 50%;
+            margin-top: 0;
+            border-top: solid blue 2px;
+            transition: all 1s;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            -moz-transition: all 1s;
+        }
+        .underline-show {
+            width: 100%;
+            left: 0;
+        }
+        button {
+            width:inherit;
+            border: solid gray 2px;
+            background-color: transparent;
+            border-radius: 10px;
+            padding: 3px 10px 3px 10px;
+            outline: 0;
+        }
+        button:active {
+            background-color: rgb(231, 231, 231);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="tab" class="tab">前端学院</h1>
+        <h1 id="underline" class="underline"></h1 >
+        <button onclick="changeStyle()" >
+            切换样式
+        </button>
+    </div >
+    <script>
+        function change() {
+            var isChanged = true;
+            var tab = document.getElementById("tab");
+            var underline = document.getElementById("underline");
+            function f() {
+                /*
+                if(isChanged){
+                    underline.style.width = "100%";
+                    underline.style.left = "0%";
+                }
+                else{
+                    underline.style.width = "0%";
+                    underline.style.left = "50%";
+                }
+                */
+                underline.classList.toggle("underline-show", isChanged);
+                tab.classList.toggle("tab-change", isChanged);
+                isChanged = !isChanged;
+            }
+            return f
+        }
+        var changeStyle = change();
+
+    </script>
+</body>
+</html>
