@@ -6,51 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        #container{
+        .container{
             width: 80px;
         }
-        .tab {
+        .container .tab {
             margin: 0;
             text-align: center;
             font-size: large;
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -o-transition: all 1s;
-            -moz-transition: all 1s;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
         }
-        .tab-change {
-            color: blue;
+        .container .tab-change {
+            color: #5ca0f8;
         }
-        .underline {
+        .container .underline {
             width: 0;
             position: relative;
             left: 50%;
             margin-top: 0;
-            border-top: solid blue 2px;
-            transition: all 1s;
-            -webkit-transition: all 1s;
-            -o-transition: all 1s;
-            -moz-transition: all 1s;
+            border-top: solid #5ca0f8 2px;
+            transition: all 0.5s ease;
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
         }
-        .underline-show {
+        .container .underline-show {
             width: 100%;
             left: 0;
         }
         button {
             width:inherit;
-            border: solid gray 2px;
+            border: solid gray 1px;
             background-color: transparent;
             border-radius: 10px;
             padding: 3px 10px 3px 10px;
             outline: 0;
         }
         button:active {
-            background-color: rgb(231, 231, 231);
+            background-color: #5ca0f8;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div id="container">
+    <div id="container" class="container">
         <h1 id="tab" class="tab">前端学院</h1>
         <h1 id="underline" class="underline"></h1 >
         <button onclick="changeStyle()" >
@@ -63,16 +64,6 @@
             var tab = document.getElementById("tab");
             var underline = document.getElementById("underline");
             function f() {
-                /*
-                if(isChanged){
-                    underline.style.width = "100%";
-                    underline.style.left = "0%";
-                }
-                else{
-                    underline.style.width = "0%";
-                    underline.style.left = "50%";
-                }
-                */
                 underline.classList.toggle("underline-show", isChanged);
                 tab.classList.toggle("tab-change", isChanged);
                 isChanged = !isChanged;
