@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam 05</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .viewport {
+            perspective: 400px;
+        }
+        .cube {
+            position: relative;
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+        }
+
+        .cube .side{
+            position: absolute;
+            border: 3px solid blue;
+        }
+        .cube .side > div {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            opacity: 0.3;
+        }
+        .cube .side:first-child{
+            transform: translateZ(100px);
+        }
+        .cube .side:nth-child(2){
+            transform: translateZ(-100px);
+        }
+        .cube .side:nth-child(3){
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .cube .side:nth-child(4){
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        .cube .side:nth-child(5){
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .cube .side:nth-child(6){
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        
+        .cube:hover{
+            animation: roll 4s linear infinite;
+        }
+
+        @keyframes roll {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="viewport">
+        <div class="cube">
+            <div class="side">
+                <div></div>
+            </div>
+            <div class="side">
+                <div></div>
+            </div>
+            <div class="side">
+                <div></div>
+            </div>
+            <div class="side">
+                <div></div>
+            </div>
+            <div class="side">
+                <div></div>
+            </div>
+            <div class="side">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
