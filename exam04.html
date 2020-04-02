@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam 04</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: block;
+            backface-visibility: hidden;
+            transition: all 2s;
+        }
+        #positive {
+            z-index: 1;
+        }
+        #negetive {
+            transform: rotateY(-180deg);
+            z-index: 0;
+        }
+        #container:hover #positive{
+            transform: rotateY(180deg);
+        }
+        #container:hover #negetive{
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="positive" src="正面.jpg">
+        <img id="negetive" src="反面.jpg">
+    </div>
+</body>
+</html>
