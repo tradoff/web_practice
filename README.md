@@ -10,7 +10,7 @@ see the effect by using "http://htmlpreview.github.io/".
 * [task05](http://ife.baidu.com/course/detail/id/32)
 * [task06](http://ife.baidu.com/course/detail/id/33)
 
-## Homework
+## Effect
 * [exam01](http://htmlpreview.github.io/?https://github.com/tradoff/web_practice/blob/master/exam01.html)
 * [exam02](http://htmlpreview.github.io/?https://github.com/tradoff/web_practice/blob/master/exam02.html)
 * [exam03](http://htmlpreview.github.io/?https://github.com/tradoff/web_practice/blob/master/exam03.html)
