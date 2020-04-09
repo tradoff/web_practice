@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 06</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .btn{
+            position: absolute;
+            appearance: none;
+            -webkit-appearance: none;
+            width: 10%;
+            height: 100%;
+            margin: 0;
+        }
+        .wrap {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+        }
+        .detail {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+        }
+        .slider{
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 2;
+        }
+        label{
+            width: 10%;
+            margin: 3px;
+        }
+        .item{
+            width: 100%;
+            height: 100%;
+            filter: brightness(30%);
+        }
+        .item:hover{
+            filter: brightness(100%);
+            cursor: pointer;
+        }
+        .btn:nth-of-type(1):checked ~ .wrap .detail:nth-of-type(1),
+        .btn:nth-of-type(2):checked ~ .wrap .detail:nth-of-type(2),
+        .btn:nth-of-type(3):checked ~ .wrap .detail:nth-of-type(3),
+        .btn:nth-of-type(4):checked ~ .wrap .detail:nth-of-type(4),
+        .btn:nth-of-type(5):checked ~ .wrap .detail:nth-of-type(5) {
+            z-index: 1;
+        }
+        .anim1 {
+            animation: leftin .5s ease-out;
+        }
+        .anim2 {
+            animation: topup .5s ease-out;
+        }
+        .anim3 {
+            animation: zoomin 1s ease-in;
+        }
+        .anim4 {
+            animation: zoomout 1s ease-out;
+        }
+        .anim5 {
+            animation: roll .7s ease-in-out;
+        }
+        
+        @keyframes leftin {
+            from{
+                transform: translateX(-500px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        }
+        @keyframes topup {
+            from{
+                transform: translateY(350px);
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+        @keyframes zoomin {
+            from{
+                transform: scale(0.1);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        @keyframes zoomout {
+            from{
+                transform: scale(2);
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+        @keyframes roll {
+            from{
+                transform: scale(0.1);
+                transform: rotate(-360deg);
+            }
+            to{
+                transform: scale(1);
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <input type="radio" class="btn" name="images" id="001" checked="true">
+    <input type="radio" class="btn" name="images" id="002">
+    <input type="radio" class="btn" name="images" id="003">
+    <input type="radio" class="btn" name="images" id="004">
+    <input type="radio" class="btn" name="images" id="005">
+
+    <div class="wrap">
+        <img src="001.jpg" alt="海贼王001" class="detail">
+        <img src="002.jpg" alt="海贼王002" class="detail">
+        <img src="003.jpg" alt="海贼王003" class="detail">
+        <img src="004.jpg" alt="海贼王004" class="detail">
+        <img src="005.jpg" alt="海贼王005" class="detail">
+    </div>
+    <!--
+            -->
+    <div class="slider">
+        <label for="001">
+            <img src="001.jpg" alt="海贼王001" class="item">
+        </label>
+        <label for="002">
+            <img src="002.jpg" alt="海贼王002" class="item">
+        </label>
+        <label for="003">
+            <img src="003.jpg" alt="海贼王003" class="item">
+        </label>
+        <label for="004">
+            <img src="004.jpg" alt="海贼王004" class="item">
+        </label>
+        <label for="005">
+            <img src="005.jpg" alt="海贼王005" class="item">
+        </label>
+    </div>
+    <script>
+        const btns = document.getElementsByClassName("btn");
+        const details = document.getElementsByClassName("detail");
+        for (let i = 0; i < btns.length; i++) {
+            const className = "anim" + (i+1);
+            /*
+            remove animation class when the animation ends.
+            Therefore, when the next checked event happens,
+            there must be a interval between the remove function and the add. 
+            */
+            details[i].addEventListener("animationend", function(){
+                details[i].classList.remove(className);
+            });
+            btns[i].onchange = function(){
+                details[i].classList.add(className);
+            }
+        }
+    </script>
+</body>
+</html>
