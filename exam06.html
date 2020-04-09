@@ -24,7 +24,7 @@
             display: flex;
             justify-content: center;
             list-style: none;
-            z-index: 2;
+            z-index: 20;
         }
         .slider li{
             width: 10%;
@@ -35,10 +35,13 @@
             height: 100%;
         }
         :not(target){
-            z-index: 0;
+            /*
+            z-index: 10;
+            */
+            animation: down 1s;
         }
         :target {
-            z-index: 1;
+            z-index: 10;
         }
         #pic001:target {
             animation: leftin .5s ease-out;
@@ -55,21 +58,33 @@
         #pic005:target {
             animation: roll .7s ease-in-out;
         }
-        
-        @keyframes leftin {
+        /*
+            slow down the turning back speed. 
+            in case of the instant show of the last picturing,
+            which would suddenly show up on the top of the same z-index. 
+        */
+        @keyframes down {
             from{
-                transform: translateX(-500px);
+                z-index: 10;
             }
             to{
-                transform: translateX(0px);
+                z-index: 10;
+            }
+        }
+        @keyframes leftin {
+            from{
+                left: -500px;
+            }
+            to{
+                left: 0;
             }
         }
         @keyframes topup {
             from{
-                transform: translateY(350px);
+                top: 350px;
             }
             to{
-                transform: translateY(0px);
+                top: 0;
             }
         }
         @keyframes zoomin {
