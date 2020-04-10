@@ -164,16 +164,9 @@
             $(this).val($(this).val().trim());
             $(this).toggleClass("form__filled", $(this).val() != "");
 
-            var inputs = $(".form__input");
-            var filled = true;
-            for (let index = 0; index < inputs.length; index++) {
-                const element = inputs[index];
-                if(!$(element).hasClass("form__filled")){
-                    filled = false;
-                    break;
-                }
-            }
-            $(".form__wrapper__submit").toggleClass("animated", filled);
+            const inputs = Array.from(document.querySelectorAll(".form__input"));
+            $(".form__wrapper__submit").toggleClass("animated", 
+                inputs.every(input => $(input).hasClass("form__filled")));
         });
     </script>
 
