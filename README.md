@@ -1,6 +1,6 @@
 # 百度前端技术学院(IFE)
 
-see the effect by using "http://htmlpreview.github.io/".  
+使用这个网站查看效果："http://htmlpreview.github.io/".  
 ***
 ## 任务
 * [task01 制作一个简单的菜单动画效果](http://ife.baidu.com/course/detail/id/18)
