@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 08</title>
+    <style>
+        #anim {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="anim"></div>
+
+    <script src="./lottie.js"></script>
+    <script>
+        lottie.loadAnimation({
+            container: document.getElementById("anim"),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'https://raw.githubusercontent.com/tradoff/web_practice/master/data.json'
+        });
+    </script>
+</body>
+</html>
