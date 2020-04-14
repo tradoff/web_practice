@@ -1,4 +1,4 @@
-# 百度前端技术学院(IFE)
+# 百度前端技术学院(IFE)设计师课程
 
 使用这个网站查看效果："http://htmlpreview.github.io/".  
 ***
